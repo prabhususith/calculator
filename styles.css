@@ -1,0 +1,32 @@
+
+:root{
+  --bg:#0f1720; --panel:#0b1220; --accent:#16a34a; --text:#e6eef2; --muted:#a3b1bb;
+}
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#08121a,#0f1720);color:var(--text)}
+.tabs{display:flex;gap:6px;padding:12px;justify-content:center}
+.tab{background:#09121a;border:1px solid rgba(255,255,255,0.03);color:var(--text);padding:10px 14px;border-radius:10px;cursor:pointer}
+.tab.active{box-shadow:0 8px 24px rgba(0,0,0,0.6);transform:translateY(-3px);border-color:rgba(22,163,74,0.2)}
+main{display:flex;justify-content:center;padding:12px}
+.tabpane{display:none;max-width:980px;width:100%}
+.tabpane.active{display:block}
+.screen{background:linear-gradient(180deg,#071018,#0b1520);color:var(--text);padding:18px;font-size:28px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);text-align:right;min-height:56px;box-shadow: 0 10px 30px rgba(2,6,23,0.6);margin-bottom:12px}
+.pad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+button{background:linear-gradient(180deg,#15303a,#0f1f26);color:var(--text);border:0;padding:14px;border-radius:12px;cursor:pointer;box-shadow: 0 8px 18px rgba(2,6,23,0.6);transform:translateY(0);transition:transform .12s cubic-bezier(.2,.8,.2,1), box-shadow .12s}
+button:active{transform:translateY(4px);box-shadow:0 4px 10px rgba(0,0,0,0.6)}
+.num{font-weight:600}
+.op{background:linear-gradient(180deg,#2b6b4a,#166534);}
+.span2{grid-column:span 2;background:linear-gradient(180deg,#2b2e3a,#111217);}
+.fx-grid{display:flex;gap:12px}
+.fx-left,.fx-right{background:linear-gradient(180deg,#071018,#0b1520);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);flex:1}
+label{display:block;margin:8px 0;color:var(--muted)}input[type="text"],input[type="number"]{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.result{margin-top:12px;padding:8px;background:rgba(255,255,255,0.02);border-radius:8px;min-height:48px}
+.muted{font-size:12px;color:var(--muted);margin-top:6px}
+.footer{padding:14px;text-align:center;color:var(--muted);font-size:13px}
+
+/* responsive */
+@media (max-width:900px){
+  .fx-grid{flex-direction:column}
+  .pad{grid-template-columns:repeat(4,1fr);gap:8px}
+  .tabs{flex-wrap:wrap}
+}

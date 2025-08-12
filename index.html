@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Calc PWA</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <nav class="tabs">
+    <button data-tab="calc" class="tab active">Calculator</button>
+    <button data-tab="sci" class="tab">Scientific</button>
+    <button data-tab="fx" class="tab">FX & Crypto</button>
+  </nav>
+
+  <main id="main">
+    <!-- Calculator Tab -->
+    <section id="tab-calc" class="tabpane active">
+      <div class="screen" id="calc-screen">0</div>
+      <div class="pad" id="calc-pad">
+        <button class="num" data-val="7">7</button>
+        <button class="num" data-val="8">8</button>
+        <button class="num" data-val="9">9</button>
+        <button class="op" data-op="/">÷</button>
+
+        <button class="num" data-val="4">4</button>
+        <button class="num" data-val="5">5</button>
+        <button class="num" data-val="6">6</button>
+        <button class="op" data-op="*">×</button>
+
+        <button class="num" data-val="1">1</button>
+        <button class="num" data-val="2">2</button>
+        <button class="num" data-val="3">3</button>
+        <button class="op" data-op="-">−</button>
+
+        <button class="num" data-val="0">0</button>
+        <button class="num" data-val=".">.</button>
+        <button id="clear">C</button>
+        <button class="op" data-op="+">+</button>
+
+        <button id="equals" class="span2">=</button>
+      </div>
+    </section>
+
+    <!-- Scientific Tab -->
+    <section id="tab-sci" class="tabpane">
+      <div class="screen" id="sci-screen">0</div>
+      <div class="pad" id="sci-pad">
+        <button class="fn" data-fn="sin">sin</button>
+        <button class="fn" data-fn="cos">cos</button>
+        <button class="fn" data-fn="tan">tan</button>
+        <button class="fn" data-fn="ln">ln</button>
+
+        <button class="fn" data-fn="sqrt">√</button>
+        <button class="fn" data-fn="pow">xʸ</button>
+        <button class="fn" data-fn="fact">n!</button>
+        <button id="sci-clear">C</button>
+
+        <input id="sci-input" class="sci-input" placeholder="Enter expression or number">
+        <button id="sci-eval" class="span2">Evaluate</button>
+      </div>
+    </section>
+
+    <!-- FX & Crypto Tab -->
+    <section id="tab-fx" class="tabpane">
+      <div class="fx-grid">
+        <div class="fx-left">
+          <h3>Currency (INR conversion)</h3>
+          <label>Amount <input id="fx-amount" type="number" value="1"></label>
+          <label>From <input id="fx-from" value="USD"></label>
+          <label>To <input id="fx-to" value="INR"></label>
+          <button id="fx-convert">Convert & Update</button>
+          <div id="fx-result" class="result">—</div>
+          <div id="fx-last" class="muted">Last update: never</div>
+        </div>
+        <div class="fx-right">
+          <h3>Crypto Prices</h3>
+          <div class="crypto-controls">
+            <label>Symbols (comma) <input id="cg-ids" value="bitcoin,ethereum"></label>
+            <label>Vs Currency <input id="cg-vs" value="usd,inr"></label>
+            <button id="cg-fetch">Fetch Prices</button>
+          </div>
+          <div id="cg-list" class="result">—</div>
+          <div id="cg-last" class="muted">Last update: never</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Offline-capable PWA • Deploy-ready</footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
